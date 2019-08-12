@@ -1,0 +1,31 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">首页</li>
+    </ol>
+</nav>
+<p>数据库中历史数据总数：{{all_count|number}}</p>
+<div echarts [options]="options" class="demo-chart"></div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">编号</th>
+      <th scope="col">电台本址</th>
+      <th scope="col">指令总数</th>
+      <th scope="col">操作处理</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of lst let key= index">
+      <td>{{key + 1}}</td>
+      <td>{{item._id}}</td>
+      <td>{{item.namecount|number}}</td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="showInfos(co,item._id)" >查看详情</button>
+        <!-- <button type="button" class="btn btn-warning" (click)="showRadioState(co,item._id)">电台状态</button>
+        <button type="button" class="btn btn-danger" (click)="showChannelState(co,item._id)">信道质量</button>
+        <button type="button" class="btn btn-success" (click)="showFrequencyState(co,item._id)">频点分布</button>
+        <button type="button" class="btn btn-info" (click)="showEvaluationState(co,item._id)">考核统计</button> -->
+      </td>
+    </tr>
+  </tbody>
+</table>

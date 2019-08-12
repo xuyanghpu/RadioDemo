@@ -1,0 +1,47 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">考核管理</li>
+    </ol>
+</nav>
+
+<div class="bg-info clearfix">
+    <button type="button" class="btn btn-secondary float-right">@</button>
+</div>
+
+<div class="card">
+    <h5 class="card-header">配置</h5>
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">电台本址</label>
+                <select class="form-control" name="maddress" [(ngModel)]="maddress" (ngModelChange)='getAddress($event)'>
+                    <option *ngFor="let item of address_lst">{{item._id}}</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="begin_datetime">开始时间</label>
+                    <div class="input-group mb-3" id ="begin_datetime">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">DT</span>
+                        </div>
+                        <input type="date" class="form-control" name='begindate' [(ngModel)]="begindate" (ngModelChange)='getBeginDate($event)'>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="end_datetime">结束时间</label>
+                    <div class="input-group mb-3" id="end_datetime">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">DT</span>
+                        </div>
+                        <input type="date" class="form-control" name='enddate' [(ngModel)]="enddate" (ngModelChange)='getEndDate($event)'>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <button type="button" class="btn btn-primary rounded-pill" (click)="showRadioState()">电台状态统计分析</button>
+        <button type="button" class="btn btn-info rounded-pill" (click)="showChannelState()">信道质量统计分析</button>
+        <button type="button" class="btn btn-success rounded-pill" (click)="showFrequencyState()">频点分布统计分析</button>
+        <button type="button" class="btn btn-danger rounded-pill" (click)="showEvaluationState()">考核管理智能报表</button>
+    </div>
+</div>

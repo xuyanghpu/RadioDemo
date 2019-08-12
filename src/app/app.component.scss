@@ -1,0 +1,15 @@
+.header{
+    background:cornflowerblue;
+    height: 60px;
+    line-height: 60px;
+    color:#fff;
+
+    a{
+        color:#fff;
+        padding: 10px;
+    }
+
+    a.active{
+       color:cornsilk;
+    }
+}

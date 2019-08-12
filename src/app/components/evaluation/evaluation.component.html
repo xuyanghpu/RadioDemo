@@ -1,0 +1,16 @@
+<div class="content">
+    <div class="left">
+        <a [routerLink]="[ '/home/welcome']" routerLinkActive="active" class="list-group-item list-group-item-action">
+          <img src="assets\imgs\1.png" width="10" height="10" class="src">
+          欢迎首页
+        </a>
+        <a [routerLink]="[ '/evaluation/evaluationhome']" routerLinkActive="active" class="list-group-item list-group-item-action">
+          <img src="assets\imgs\1.png" width="10" height="10" class="src">
+          考核管理
+        </a>
+    </div>
+
+    <div class="right">
+      <router-outlet></router-outlet>
+    </div>
+</div>
